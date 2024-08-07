@@ -1,0 +1,55 @@
+#skill-badge{
+    position: relative;
+}
+#skill-badge:nth-child(3),
+#skill-badge:nth-child(8),
+#skill-badge:nth-child(13){
+    margin: 0 auto;
+}
+#skill-badge:nth-child(1),
+#skill-badge:nth-child(6),
+#skill-badge:nth-child(11){
+    top: calc(120%); 
+}
+
+#skill-badge:nth-child(5),
+#skill-badge:nth-child(10),
+#skill-badge:nth-child(15){
+    top: calc(110%); 
+}
+#skill-badge:nth-child(2),
+#skill-badge:nth-child(4),
+#skill-badge:nth-child(7),
+#skill-badge:nth-child(9),
+#skill-badge:nth-child(12),
+#skill-badge:nth-child(14)
+{
+    top: calc(40%);
+}
+#skill-badge:nth-child(6),
+#skill-badge:nth-child(7){
+    left: calc(30%);
+}
+#skill-badge:nth-child(4),
+#skill-badge:nth-child(9),
+#skill-badge:nth-child(14){
+    right: calc(-15%);
+}
+
+#skill-badge:nth-child(11),
+#skill-badge:nth-child(12){
+    left: calc(65%);
+}
+
+#skill-badge:nth-child(15){
+    right:calc(35%);
+}
+#marquee {
+    animation: marquee 10s linear infinite;
+  }
+  
+  @keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%);
+   }
+  }

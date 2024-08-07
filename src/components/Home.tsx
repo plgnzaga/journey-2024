@@ -27,9 +27,9 @@ export default function Home() {
                     <span>{new Date().getFullYear()}</span>
                 </div>
                 <div className={`uppercase flex flex-col text-[200px] ${neueMachina.className} justify-between text-center`}>
-                    <span>FullStack</span>
-                    <span className="text-[#A100FF]">Web         &nbsp;&nbsp;&nbsp;App</span>
-                    <span>Developer</span>
+                    <span className="leading-none">FullStack</span>
+                    <span className="leading-none text-[#A100FF]">Web         &nbsp;&nbsp;&nbsp;App</span>
+                    <span className="leading-none">Developer</span>
                 </div>
             </div>
 
