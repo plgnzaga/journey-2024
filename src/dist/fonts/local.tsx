@@ -11,3 +11,18 @@ export const neueMachina = localFont({
     ],
     variable: '--neue-machina',
 })
+
+export const bricolageGrotesque = localFont({
+    src: [
+        {
+            path: '../../../public/fonts/BricolageGrotesque-ExtraLight.ttf',
+        },
+        {
+            path: '../../../public/fonts/BricolageGrotesque-Light.ttf',
+        },
+        {
+            path: '../../../public/fonts/BricolageGrotesque-Regular.ttf',
+        },
+    ],
+    variable: '--neue-machina',
+})
