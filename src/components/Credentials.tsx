@@ -24,7 +24,7 @@ import notion from "../dist/img/notion.png"
 import vector2 from "../dist/img/Vector2.png"
 import be from "../dist/svg/be.svg"
 import ig from "../dist/svg/ig.svg"
-import linkedIn from "../dist/svg/linkedin.svg"
+import LI from "../dist/svg/IN.svg"
 import github from "../dist/svg/github.svg"
 
 import Footer from "../dist/svg/Footer.svg"
@@ -279,7 +279,7 @@ const Credentials = () => {
                         <span className="grid place-items-center">Behance</span>
                     </a>
                     <a href="https://www.linkedin.com/in/paulgnzaga/" target="_blank" className="grid grid-cols-2">
-                        <Image src={linkedIn} alt="" />
+                        <Image src={LI} alt="" />
                         <span className="grid place-items-center">LinkedIn</span>
                     </a>
                     <a href="https://www.instagram.com/kaitouukidd/" target="_blank"  className="grid grid-cols-2">
