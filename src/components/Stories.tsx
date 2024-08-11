@@ -152,7 +152,7 @@ const Stories = () => {
         return (
             <div className="flex flex-col ">
                 { item.id != undefined &&
-                    <div className={`grid-cols-${journeys.length ?? 7} grid  gap-3`}>
+                    <div className={`grid-cols-7 grid gap-3`}>
                         {Array.from({ length: journeys.length }, (_, index) => (
                             <div key={index} className={`rounded-md ${item.id?? 1 >= index + 1 ? 'bg-white' : 'bg-zinc-100/50'}`} style={{height:'0.65rem'}}></div>
                         ))}

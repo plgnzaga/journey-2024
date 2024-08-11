@@ -180,9 +180,9 @@ const Credentials = () => {
     return (
         <div className="relative">
             <div className="bg-gradient-to-b from-[#381050] to-[#000] w-screen text-white p-[100px] pb-[20rem]" id="credentials">
-                <div ref={credentialsRef} className="grid" style={{ placeItems: 'center' }}>
+                <section ref={credentialsRef} className="grid" style={{ placeItems: 'center' }}>
                     <Image src={credentials} alt="Checkout my stories" />
-                </div>
+                </section>
                 <div className="flex gap-5 pt-[10rem]">
                     <div className="basis-1/4 ">
                         <div className="flex flex-col gap-3 border border-[#A100FF] border-2 p-[30px] h-full rounded-2xl noise">
@@ -254,9 +254,9 @@ const Credentials = () => {
                 </div>
 
                 <section className="mt-[10rem]">
-                    <div ref={whatCanIDoRef} className="grid" style={{ placeItems: 'center' }}>
+                    <section ref={whatCanIDoRef} className="grid" style={{ placeItems: 'center' }}>
                         <Image src={whatIcanDo} alt="What I can do!" />
-                    </div>
+                    </section>
                     <div className="px-[10rem] grid grid-cols-5 gap-[3rem]">
                         {mySkills.map(x =>
                             <abbr key={x.id} id="skill-badge" title={x.alternateName ?? x.name}>
@@ -272,7 +272,7 @@ const Credentials = () => {
                         </div>
                     )}
                 </div>
-                <div ref={toolsUsingRef} className="grid" style={{placeItems:'center'}}>
+                <section ref={toolsUsingRef} className="grid" style={{placeItems:'center'}}>
                     <Image src={toolsUsed} alt="Tools I am Using" />
                     <div className="grid grid-cols-4 gap-[5rem] mt-[5rem]">
                         <abbr title="Adobe Illustrator"><Image src={ai} alt="Adobe Illustrator" /></abbr>
@@ -283,7 +283,7 @@ const Credentials = () => {
                     <div className="relative">
                     <Image src={vector2} alt="" />
                     </div>
-                </div>
+                </section>
 
                 
             </div>
