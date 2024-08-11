@@ -177,7 +177,7 @@ const Stories = () => {
                 <div>
                     <span className={`${bricolageGrotesque.className} text-[50px] font-heavy`}>&gt;&gt;&gt;&gt;</span>
                 </div>
-                {journeys.toSorted((a, b) => b.year - a.year).map((x,index) => 
+                {journeys.sort((a, b) => b.year - a.year).map((x,index) => 
                     <JourneyCard
                         key={x.id}
                         id={x.id}

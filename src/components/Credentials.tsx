@@ -1,5 +1,6 @@
 import Image from "next/image";
 import credentials from "../dist/img/credentials.png"
+import toolsUsed from "../dist/img/ToolsUsing.png"
 import whatIcanDo from "../dist/img/whatIcanDo.png"
 import reactIcon from "../dist/svg/react.svg"
 import js from "../dist/svg/js.svg"
@@ -16,6 +17,18 @@ import tailwind from "../dist/svg/tailwind.svg"
 import tsIcon from "../dist/svg/ts.svg"
 import vue from "../dist/svg/vue.svg"
 import sqlServer from "../dist/svg/sqlServer.svg"
+import ai from "../dist/img/ai.png"
+import ps from "../dist/img/ps.png"
+import figma from "../dist/img/figma.png"
+import notion from "../dist/img/notion.png"
+import vector2 from "../dist/img/Vector2.png"
+import be from "../dist/svg/be.svg"
+import ig from "../dist/svg/ig.svg"
+import linkedIn from "../dist/svg/linkedin.svg"
+import github from "../dist/svg/github.svg"
+
+import Footer from "../dist/svg/Footer.svg"
+
 import { bricolageGrotesque, neueMachina } from "@/dist/fonts/local";
 const Credentials = () => {
 
@@ -32,7 +45,6 @@ const Credentials = () => {
         {
             id: 1,
             name: 'MUI',
-            alternateName: 'Material UI',
             icon: mui,
             rating: 0,
             width: '125px'
@@ -230,23 +242,56 @@ const Credentials = () => {
                     </div>
                     <div className="px-[10rem] grid grid-cols-5 gap-[3rem]">
                         {mySkills.map(x =>
-                            <div key={x.id} id="skill-badge">
+                            <abbr key={x.id} id="skill-badge" title={x.alternateName ?? x.name}>
                                 <Image src={x.icon ?? ""} style={{ width: x.width }} alt={""} />
-                            </div>
+                            </abbr>
                         )}
                     </div>
                 </section>
-                <div id="marquee" className="absolute w-screen mt-[10rem]">
-                {mySkills.map(x =>
-                    <>
-                        <span className={`${neueMachina.className} text-[5rem]`} key={x.id}>{x.alternateName ?? x.name}<small className="text-[2rem]" style={{ placeItems: 'center' }}>&bull;</small></span>
-                    </>
-                )}
+                <div id="marquee" className="flex w-screen mt-[15rem]">
+                    {mySkills.map(x =>
+                        <div key={x.id}>
+                            <span className={`${neueMachina.className} text-[5rem]`} >{x.alternateName ?? x.name}<small className="text-[2rem]" style={{ placeItems: 'center' }}>&bull;</small></span>
+                        </div>
+                    )}
+                </div>
+                <div className="grid " style={{placeItems:'center'}}>
+                    <Image src={toolsUsed} alt="Tools I am Using" />
+                    <div className="grid grid-cols-4 gap-[5rem] mt-[5rem]">
+                        <abbr title="Adobe Illustrator"><Image src={ai} alt="Adobe Illustrator" /></abbr>
+                        <abbr title="Photoshop"><Image src={ps} alt="Photoshop" /></abbr>
+                        <abbr title="Figma"><Image src={figma} alt="Figma" /></abbr>
+                        <abbr title="Notion"><Image src={notion} alt="Notion" /></abbr>
+                    </div>
+                    <div className="relative">
+                    <Image src={vector2} alt="" />
+                    </div>
                 </div>
 
                 
             </div>
             
+            <div className="relative">
+                <Image src={Footer} alt="" />
+                <div className="grid grid-cols-4 text-white">
+                    <a href="https://www.behance.net/paulgonzaga" target="_blank" className="grid grid-cols-2">
+                        <Image src={be} alt="" />
+                        <span className="grid place-items-center">Behance</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/paulgnzaga/" target="_blank" className="grid grid-cols-2">
+                        <Image src={linkedIn} alt="" />
+                        <span className="grid place-items-center">LinkedIn</span>
+                    </a>
+                    <a href="https://www.instagram.com/kaitouukidd/" target="_blank"  className="grid grid-cols-2">
+                        <Image src={ig} alt="" />
+                        <span className="grid place-items-center">Instagram</span>
+                    </a>
+                    <a href="https://github.com/plgnzaga" target="_blank"  className="grid grid-cols-2">
+                        <Image src={github} alt="" />
+                        <span className="grid place-items-center">Github</span>
+                    </a>
+                </div>
+            </div>
         </div>
     )
 }
