@@ -60,3 +60,9 @@ html{
         transform: translateX(-100%);
     }
 }
+#sidebar span{
+    cursor: pointer;
+}
+#sidebar span:hover,#sidebar span.active{
+    transform: scale(2);
+}

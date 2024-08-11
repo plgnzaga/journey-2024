@@ -1,3 +1,4 @@
+"use client"
 import { neueMachina ,bricolageGrotesque} from "@/dist/fonts/local"
 import Image from "next/image"
 import vector1 from "../dist/img/Vector1.png"
@@ -6,12 +7,23 @@ import helloText from "../dist/img/Hello.png"
 import contactBanner from "../dist/img/ContactBanner.png"
 import Navbar from "./Navbar"
 import Sidebar from "./Sidebar"
+import { useContext, useEffect, useRef } from "react"
+import AppContext from "@/common/AppContext"
 
 export default function Home() {
+    const {currentTab} = useContext(AppContext);
+    const homeRef = useRef<null | HTMLElement>(null);
+
+    useEffect(() => {
+        if(currentTab == 1){
+            homeRef.current?.scrollIntoView({behavior:'smooth'})
+        }
+    },[currentTab])
+
     return (
         <>
         <Navbar />
-        <section className="text-white" style={{background:'#282828'}}>
+        <section ref={homeRef} className="text-white" style={{background:'#282828'}}>
             <div className="pb-[150px]">
                 <Image
                     src={vector1}

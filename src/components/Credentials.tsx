@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import credentials from "../dist/img/credentials.png"
 import toolsUsed from "../dist/img/ToolsUsing.png"
@@ -30,8 +31,14 @@ import github from "../dist/svg/github.svg"
 import Footer from "../dist/svg/Footer.svg"
 
 import { bricolageGrotesque, neueMachina } from "@/dist/fonts/local";
+import { useContext, useEffect, useRef } from "react";
+import AppContext from "@/common/AppContext";
 const Credentials = () => {
-
+    const {currentTab} = useContext(AppContext);
+    const credentialsRef = useRef<null | HTMLElement>(null);
+    const whatCanIDoRef = useRef<null | HTMLElement>(null);
+    const toolsUsingRef = useRef<null | HTMLElement>(null);
+    
     type Skills = {
         id: number,
         name: string,
@@ -158,12 +165,22 @@ const Credentials = () => {
         }
     ];
 
-
+    useEffect(() => {
+        if(currentTab == 3){
+            credentialsRef.current?.scrollIntoView({behavior:'smooth'})
+        }
+        if(currentTab == 4){
+            whatCanIDoRef.current?.scrollIntoView({behavior:'smooth'})
+        }
+        if(currentTab == 5){
+            toolsUsingRef.current?.scrollIntoView({behavior:'smooth'})
+        }
+    },[currentTab])
 
     return (
         <div className="relative">
             <div className="bg-gradient-to-b from-[#381050] to-[#000] w-screen text-white p-[100px] pb-[20rem]" id="credentials">
-                <div className="grid" style={{ placeItems: 'center' }}>
+                <div ref={credentialsRef} className="grid" style={{ placeItems: 'center' }}>
                     <Image src={credentials} alt="Checkout my stories" />
                 </div>
                 <div className="flex gap-5 pt-[10rem]">
@@ -237,7 +254,7 @@ const Credentials = () => {
                 </div>
 
                 <section className="mt-[10rem]">
-                    <div className="grid" style={{ placeItems: 'center' }}>
+                    <div ref={whatCanIDoRef} className="grid" style={{ placeItems: 'center' }}>
                         <Image src={whatIcanDo} alt="What I can do!" />
                     </div>
                     <div className="px-[10rem] grid grid-cols-5 gap-[3rem]">
@@ -255,7 +272,7 @@ const Credentials = () => {
                         </div>
                     )}
                 </div>
-                <div className="grid " style={{placeItems:'center'}}>
+                <div ref={toolsUsingRef} className="grid" style={{placeItems:'center'}}>
                     <Image src={toolsUsed} alt="Tools I am Using" />
                     <div className="grid grid-cols-4 gap-[5rem] mt-[5rem]">
                         <abbr title="Adobe Illustrator"><Image src={ai} alt="Adobe Illustrator" /></abbr>

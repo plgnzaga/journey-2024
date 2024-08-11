@@ -1,11 +1,15 @@
-
+"use client"
 
 import { bricolageGrotesque, neueMachina } from "@/dist/fonts/local"
 import myStories from "../dist/img/CheckoutMyStories.svg"
 import Image from "next/image"
+import { useContext, useEffect, useRef } from "react"
+import AppContext from "@/common/AppContext"
 
 
 const Stories = () => {
+    const {currentTab} = useContext(AppContext)
+    const myStoriesRef = useRef<null | HTMLElement>(null);
     type Journey = {
         id: number,
         year: number,
@@ -167,9 +171,14 @@ const Stories = () => {
         )
     };
 
+    useEffect(() => {
+        if(currentTab == 2){
+            myStoriesRef.current?.scrollIntoView({behavior:'smooth'})
+        }
+    },[currentTab])
 
     return (
-        <section className="grid w-screen text-white p-[150px]" style={{background:'linear-gradient(to bottom,#282828,#A100ff)'}}>
+        <section ref={myStoriesRef} className="grid w-screen text-white p-[150px]" style={{background:'linear-gradient(to bottom,#282828,#A100ff)'}}>
             <div className="flex" style={{margin:'0 auto'}}>
                 <Image src={myStories} alt="Checkout my stories"/>
             </div>
